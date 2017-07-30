@@ -1,0 +1,11 @@
+- ordenar a lista de objectivos
+- corrigir argumetos para argumentos
+- criar um indice de anotacoes matematicas e sua leitura
+- remover o simbolo estranho na capa
+- inserir um índice
+- fazer a agenda para as aulas basear-se em: http://www.cs.cornell.edu/Courses/cs2800/2013fa/syllabus.htm
+- indicar as datas da entrega dos exercºicioos
+- incluir os sinais de dedução
+- encontrar o simbolo para a negação de um conjunto
+- resolver o problema da paginação dos números
+- Resolve o problema na numeracao de exemplos e definições

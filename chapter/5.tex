@@ -1,0 +1,39 @@
+\chapter{Grafos}
+\label{cap:grafos}
+
+Grafos são estruturas discretas que consistem em vértices e arestas que conectam
+estes vértices. Existem vários tipos de grafos, dependendo da existência de
+direcção nas arestas, de acordo a possibilidade de várias arestas se
+interligarem ao mesmo par de vértices e de acordo a existência de \emph{loops}.
+Problemas em quase todas as disciplinas podem resolvidos utilizando modelos de
+grafos. Iremos apresentar alguns exemplos para ilustrar como os grafos são
+utilizados como modelos numa variedade de aéras. Por exempo, iremos mostrar como
+os grafos são utilizados para representar a competição de diferentes espécias
+num nicho ecológico, e como os grafos são usados para representar quem
+influencia quem numa organização e etc.
+
+Utilizando modelos de grafos, podemos determinar se é possível caminhar todas as
+ruas de uma cidade sem psasar por uma rua duas vezes, e podemos determinar o
+número de cores necessário para colorar as regiões de um mapa. Grafos podem ser
+utilizados para determinar se um circuito pode ser implementado numa placa de
+circuitos plana. Podemos distinguir entre dois compostos químicos com a mesma
+fórmula molecular mas estruturas diferentes utilizando grafos. Podemos
+determinar se dois computadores estão conectados por um \emph{link} de
+comunicação utilizando modelos gráficos de redes. Grafos com pesos atribuidos as
+suas arestas podem ser utilizados para resolver problemas como encontrar o
+caminho mais curto entre duas cidades numa rede de transporte. Neste capítulo
+iremos apresentar os conceitos básicos da teoria dos grafos e apresentar alguns
+modelos de grafos. Para resolver uma boa parte dos problemas que podem ser
+estudados utilizando grafos, iremos apresentar alguns algoritmos de grafos.
+Iremos também estudar a complexidade destes algoritmos.
+
+\section{Grafos e Modelos de Grafos}
+
+Começamos com a definição de grafos.
+\begin{defn}
+\label{def51}
+Um \emph{grafo} $G = (V,E)$ consiste em $V$, um conjunto não-vazio de
+\emph{vértices} (ou \emph{nós}) e $E$, um conjunto de \emph{arestas}. Cada
+aresta possui ou um ou mais vértices associados a esta, chamada de sua
+\emph{extremidade}. Diz-se que uma aresta \emph{conecta} as suas extremidades.
+\end{defn}

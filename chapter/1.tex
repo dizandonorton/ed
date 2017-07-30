@@ -1,0 +1,1076 @@
+\chapter{Lógica Formal}
+\label{cap:logicaformal}
+\newtheorem{thm}{Theorem}[section] % reset theorem numbering for each chapter
+\newtheorem{lm}{Theorem}[section]
+
+
+\newtheorem{defn}[thm]{Definição}
+\newtheorem{exmp}[lm]{Exemplo}
+
+As regras da lógica fornecem o significado de expressões matemáticas. Por
+exemplo, estas regras nos ajudam a entender e a raciocinar sobre sentenças como
+\emph{``Existe um inteiro que é a soma de dois quadrados''} e \emph{``Para todo o
+inteiro positivo \emph{n}, a soma dos positivos não maiores que \emph{n} é
+$n(n+1)/2$''}. A lógica é a base do raciocínio matemático, e do raciocínio
+automatizado. Possui aplicações práticas no desenho de computadores, na
+especificação de sistemas, na Inteligêngia Artifical, na programação de computadores, nas linguagens de
+programação e outras áreas da Ciência da Computação bem como também em outras
+ciências e áreas de estudo.
+
+Para entender a matemática, precisamos perceber o que constitui um argumento
+matemático correcto, isto é, uma prova ou demonstração. Uma vez que demonstramos
+que uma sentença matemática é verdadeira, nós a chamamos de teorema. Uma
+colecção de teoremas sobre um assunto ou tópico constitui o que sabemos sobre tal
+tópico. Então, para perceber um tópico matemático, é necessário activamente
+construir argumentos matemáticos sobre tal tópico. As demonstrações são
+muito comuns em mátematica e também em Ciência da Computação. Elas são
+utilizadas para verificar se os programas de computadores produzem a saída
+correcta para todos os valores de entrada possíveis, para verificar se os
+algoritmos produzem sempre a saída correcta, para determinar a segurança de um
+sistema e para criar inteligência artificial. Além disso, sistemas de raciocínio
+automatizados foram criados para permitir que os computadores construam as suas
+próprias demonstrações.
+
+Neste capítulo, iremos apresentar o que constitui uma sentença matemática
+correcta e introduzir as ferramentas para a construção destes argumentos. Iremos
+estudar alguns métodos de demonstração e estratégias para a construção de
+demonstrações.
+
+\section{Lógica proposicional}
+\label{sec:logicaproposicional}
+
+As regras da lógica fornecem significados às sentenças ou argumentos
+matemáticos. Estas regras são utilizadas para distinguir um argumento matemático
+válido de um inválido.
+
+Para além da sua importância na compreensão do raciocínio matemático, a lógica
+possui inúmeras aplicações em Ciência da Computação. Algumas dessas aplicações
+serão discutidas ao longo desta secção.
+
+\subsection*{\underline{Proposições}}
+
+Começamos a nossa discussão com uma introdução sobre o elemento básico da lógica
+- as proposições. Uma \textbf{proposição} é uma sentença declarativa (isto é,
+uma sentença que declara um facto) que pode ser verdadeira ou falsa, mas não
+ambas.
+%
+
+\begin{exmp}
+\label{exem11}
+As seguintes sentenças declarativas são exemplos de proposições.
+\end{exmp}
+\begin{enumerate}
+  	\item Luanda é a capital da República de Angola.
+  	\item Angola possui 24 províncias.
+  	\item $1 + 1 = 2$.
+  	\item $1 + 2 < 1$.
+\end{enumerate}
+
+As proposições 1 e 3 são verdadeiras, enquanto que as proposições 2 e 4 são
+falsas. Algumas sentenças que não são proposições são dadas no Exemplo 2.
+
+%\begin{description}
+
+\begin{exmp}
+\label{exem12}
+Considere as seguintes sentenças.\end{exmp}
+\begin{enumerate}
+  	\item Que horas são?
+  	\item Leia isto atentamente.
+  	\item $x + 1 = 2$.
+  	\item $x + y = z$.
+\end{enumerate}
+%\end{description}
+
+As sentenças 1 e 2 não são proposições porque não são sentenças declarativas. As
+sentenças 3 e 4 não são proposições porque ambas não são verdadeiras nem falsas.
+Note que as sentenças 3 e 4 podem ser transformadas em proposições se
+atribuir-mos valores às variáveis $x$ e $y$.
+
+Utilizamos letras para denotar as \textbf{variáveis proposicionais} (ou
+\textbf{variáveis da expressão}), isto é, variáveis que representam proposições,
+tal como as letras são utilizadas para denotar valores numéricos. As letras
+convencionais utilizadas para variáveis proposicionais são $p, q, r, s, \ldots$.
+O \textbf{valor lógico} de uma proposição é verdadeiro, denotado por V, se a
+proposição for verdadeira. Consequentemente, o valor lógico de uma
+proposição é falso, denotado por F, se a proposição for falsa.
+
+A área da lógica que trata das proposições é chamada de \textbf{cálculo
+proposicional} ou \textbf{lógica proposicional}. \emph{TAREFA: Pesquisar sobre
+Aristotle e o Cálculo Proposicional}.
+
+Muitas expressões matemáticas são construídas pela combinação de uma ou mais
+proposições. Novas proposições, chamadas de \textbf{proposições compostas}, são
+formadas a partir de proposições existentes utilizando os operadores lógicos.
+
+\begin{defn}\label{def11}(Negação) Seja $p$ uma proposição. A
+\emph{negação} de $p$, denotada por $\lnot p$ (também denotada por $\bar{p}$),
+é a expressão\end{defn}
+
+``Não é verdade que $p$''.\\ \\
+A proposição $\lnot p$ lê-se ``não $p$''. O valor lógico da negação de $p$,
+$\lnot p$, é o oposto do valor lógico de $p$.
+
+\label{exem13}
+\begin{exmp}Encontre a negação da proposição\end{exmp}
+\emph{``O computador do Miguel possui o Sistema Operativo Linux.''}\\ \\
+e a expresse em Português simples.
+
+\begin{description}
+\item[Solução] A negação é: \emph{``Não é verdade que o computador do Miguel
+possui o Sistema Operativo Linux.''}\\ \\
+Esta negação pode ser expressada de forma mais simples como: \emph{``O
+computador do Miguel não possui o Sistema Operativo Linux.''}
+\end{description}
+
+
+A tabela \ref{tabela:11} apresenta a \textbf{tabela de verdade} para a negação
+de uma proposição $p$. Esta tabela possui uma linha para cada um dos valores
+lógicos possíveis para a proposição $p$. Cada linha apresenta o valor lógico de
+$\lnot p$ correspondente ao valor lógico de $p$ para esta linha.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}%
+\toprule
+\textbf{$p$} & \textbf{$\lnot p$}\\ 
+\midrule
+V	&	F\\
+F	&	V\\
+\bottomrule%
+\end{tabular}%
+\caption{A tabela de verdade da negação de uma proposição.}
+\label{tabela:11}
+\end{table}
+
+A negação de uma proposição pode ser também considerada como o resultado da
+acção do \textbf{operador de negação} numa proposição. O operador de negação
+constrói uma nova proposição a partir de uma única proposição. Iremos agora
+apresentar os operadores lógicos que são utilizados para formar novas
+proposições a partir de duas ou mais proposições existentes. Estes operadores lógicos também
+são chamados de \textbf{conectores}.
+
+\label{def12}
+\begin{defn}
+(Conjunção) Sejam as proposições $p$ e $q$. A
+	\emph{conjunção} de $p$ e $q$, denotada por $p \land q$, é a proposição ``$p$
+	e $q$''. A conjunção $p \land q$ é verdadeira quando ambos $p$ e $q$ são
+	verdadeiros e falsa em caso contrário.
+\end{defn}
+
+A tabela \ref{tabela:12} apresenta a tabela de verdade de $p \land q$. Esta
+tabela possui uma linha para cada um das quatro possíveis combinações dos valores
+lógicos de $p$ e $q$. As quatro linhas correspondem aos pares dos valores
+lógicos VV, VF, FV e FF, onde o primeiro valor lógico no par é o valor lógico de $p$ e o
+segundo valor lógico é o valor lógico de $q$.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}%
+\toprule
+\textbf{$p$} & \textbf{$q$} & \textbf{$p \land q$}\\ 
+\midrule
+V & V & V\\
+V &	F & F\\
+F &	V & F\\
+F &	F & F\\
+\bottomrule%
+\end{tabular}%
+\caption{A tabela de verdade da conjunção de duas proposições.}
+\label{tabela:12}
+\end{table}
+
+
+\begin{exmp}
+\label{exem14}
+Encontre a conjunção das proposições $p$ e $q$ onde $p$ é a proposição \emph{``O
+computador da Rebecca possui mais de 16 GB de espaço livre em disco''} e $q$ é a
+proposição \emph{``O processador no computador da Rebecca tem uma velocidade maior que 1 GHz.''}.
+\end{exmp}
+	
+\begin{description}
+	\item[Solução] A conjunção destas duas proposições, $p \land q$, é a proposição
+	\emph{``O computador da Rebecca possui mais de 16 GB de espaço livre em disco
+	e o seu processador tem uma velocidade maior que 1 GHz.''} Para esta conjunção
+	ser verdadeira ambas as condições dadas devem ser verdadeiras.  É falsa quando
+	uma ou ambas as condições são falsas.
+\end{description}
+
+\label{def13}
+\begin{defn}
+(Disjunção) Sejam as proposições $p$ e $q$. A
+	\emph{disjunção} de $p$ e $q$, denotada por $p \lor q$, é a proposição ``$p$
+	ou $q$''. A disjunção $p \lor q$ é falsa quando ambos $p$ e $q$ são
+	falsos, e verdadeira em caso contrário.
+\end{defn}
+
+A tabela \ref{tabela:13} apresenta a tabela de verdade de $p \lor q$.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}%
+\toprule
+\textbf{$p$} & \textbf{$q$} & \textbf{$p \lor q$}\\ 
+\midrule
+V & V & V\\
+V &	F & V\\
+F &	V & V\\
+F &	F & F\\
+\bottomrule%
+\end{tabular}%
+\caption{A tabela de verdade da disjunção de duas proposições.}
+\label{tabela:13}
+\end{table}
+
+A utilização do conector \emph{ou} numa disjunção corresponde a uma das
+utilizações da palavra \emph{ou} na Língua Portuguesa, nomeadamente,
+como um \textbf{ou inclusivo}. A disjunção é verdadeira quando pelo menos uma
+das duas proposições é verdadeira. Por exemplo, o ``ou inclusivo'' é utilizado na
+expressão:\\ \\
+\emph{``Os estudantes aprovados em Análise ou Álgebra podem frequentar esta
+aula.''}\\ \\
+Aqui, queremos dizer que os estudantes que aprovaram em Análise e Álgebra podem
+assistir a esta aula, bem como os estudantes que aprovaram em pelo menos uma
+delas. Por outro lado, estaremos a utilizar um ``ou exclusivo'' quando
+dizemos:\\
+\\
+\emph{``Os estudantes aprovados em Análise ou Álgebra, mas não em ambas, podem
+frequentar esta aula.''}\\ \\
+Aqui, queremos dizer que os estudantes que aprovaram em Análise e Álgebra não
+podem assisir a esta aula. Apenas estes que aprovaram em exactamente uma das duas
+disciplinas podem assistir à esta aula.
+
+\label{exem15}
+\begin{exmp}
+Qual é a disjunção das proposições $p$ e $q$ onde $p$ e $q$ são as mesmas
+proposições utilizadas no exemplo \ref{exem14}?
+\end{exmp}
+\begin{description}
+	\item[Solução] A disjunção das proposições $p$ e $q$, $p \lor q$, é a
+	proposição\\ \\
+	\emph{``O computador da Rebecca possui mais de 16 GB de espaço
+	livre em disco ou o processador do seu computador tem uma velocidade maior que
+	1 GHz.''} \\ \\
+	
+	Esta proposição é verdadeira quando o computador de Rebecca possuir mais de 16
+	GB de espaço livre em disco, o processador possuir uma velocidade maior que 1
+	GHz e quando ambas as condições forem verdadeiras. Será falsa quando ambas as
+	condições forem falsas.
+\end{description}
+
+\begin{defn}
+	\label{def14}
+	(Ou-Exclusivo ou Disjunção Exclusiva) Sejam as proposições $p$ e $q$. A
+	\emph{disjunção exclusiva} de $p$ e $q$, denotada por $p \oplus q$, é a
+	proposição que é verdadeira quando exactamente apenas uma entre ``$p$ ou $q$''
+	é verdadeira e falsa em caso contrário.
+\end{defn}
+
+A tabela de verdade para a disjunção exclusiva de duas proposições é ilustrada
+na tabela \ref{tabela:14}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}%
+\toprule
+\textbf{$p$} & \textbf{$q$} & \textbf{$p \oplus q$}\\ 
+\midrule
+V &	V & F\\
+V &	F & V\\
+F &	V & V\\
+F &	F & F\\
+\bottomrule%
+\end{tabular}%
+\caption{A tabela de verdade da disjunção exclusiva de duas proposições.}
+\label{tabela:14}
+\end{table}
+
+\subsection*{\underline{Sentenças condicionais}}
+
+Iremos agora abordar sobre outras formas importantes de combinar proposições.
+
+\label{def15}
+\begin{defn}
+(Sentença condicional) Sejam as proposições $p$ e $q$. A \emph{sentença
+condicional} de $p \to q$ é a proposição ``se $p$, então $q$.'' A sentença
+condicional $p \to q$ é falsa quando $p$ é verdadeiro e $q$ é falso, e
+verdadeira em caso contrário. Na sentença condicional $p \to q$, $p$ é chamado
+de ``hipótese'' (ou antecedente ou premissa) e $q$ é chamado de conclusão (ou consequente).
+\end{defn}
+
+A sentença $p \to q$ é chamada de sentença condicional porque $p \to q$ afirma
+que $q$ é verdadeiro caso $p$ se verifique. Uma sentença condicional é também
+chamada de \textbf{implicação}. A tabela de verdade para a sentença condicional
+$p \to q$ é apresentada na Tabela \ref{tabela:15}. Note que a expressão $p \to
+q$ é verdadeira quando ambos $p$ e $q$ são verdadeiros e quando $p$ é falso
+(não importa qual seja o valor de $q$).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}%
+\toprule
+\textbf{$p$} & \textbf{$q$} & \textbf{$p \to q$}\\ 
+\midrule
+V &	V & V\\
+V &	F & F\\
+F &	V & V\\
+F &	F & V\\
+\bottomrule%
+\end{tabular}%
+\caption{A tabela de verdade da sentença condicional $p \to q$.}
+\label{tabela:15}
+\end{table}
+
+
+Devido ao facto de as sentenças condicionais desempenharem um papel
+essêncial no raciocínio matemático, existe uma vasta gama de termos utilizados
+para expressar $p \to q$. Algumas destes termos são:
+
+\begin{itemize}
+  \item ``se $p$, então $q$''
+  \item ``$p$ implica $q$''
+  \item ``se $p$, $q$''
+  \item ``$q$ somente se $p$''
+  \item ``$p$ é suficiente para $q$''
+  \item ``$q$ se $p$''
+  \item ``$q$ quando $p$''
+  \item \ldots
+\end{itemize}
+
+
+Uma forma útil para entender uma tabela de verdade de uma sentença condicional é
+pensar numa obrigação ou contrato. Por exemplo, a promessa que muitos políticos
+fazem quando concorrem para uma determinada eleição é:
+
+\begin{center}\emph{``Se eu for eleito, irei reduzir os impostos.''}\end{center}
+
+Se o político é eleito, os eleitores irão esperar que o político reduza os
+impostos. Além disso, se o político não for eleito, então os eleitores não
+terão expectativas que o mesmo político reduza os impostos, embora o
+político possa ter alguma influência para que tal aconteça. É apenas quando o político é
+eleito e não reduz os impostos que os eleitores podem dizer que o político não
+cumpriu com a sua promessa de campanha. Este último cenário corresponde ao caso
+em que $p$ é verdadeiro mas $q$ é falso em $p \to q$.
+
+\label{exem16}
+\begin{exmp}
+Seja $p$ a sentença ``Maria aprende Estruturas Discretas'' e
+$q$ a sentença ``Maria conseguirá um bom emprego''. Expresse a sentença $p
+\to q$ como uma sentença em Português.
+\end{exmp}
+
+
+\begin{description}
+	\item[Solução] Da definição de sentenças condicionais, vemos que quando $p$ é a
+	expressão ``Maria aprende Estruturas Discretas'' e $q$ a sentença ``Maria
+	conseguirá um bom emprego'', $p \to q$ representa a sentença
+	\begin{center}\emph{``Se Maria aprende Estruturas Discretas, então ela
+	encontrará um bom emprego.''}\end{center}
+	
+Existem muitas outras formas de expressar esta sentença condicional em
+Português. As formais mais naturais poderiam ser:
+	\begin{itemize}
+	 	\item \emph{``Maria encontrará um bom emprego quando ela aprender Estruturas
+Discretas''}.
+		\item \emph{``Para Maria encontrar um bom emprego, é suficiente que ela
+	aprenda Estruturas Discretas''}.
+		\item \emph{``Maria encontrará um bom emprego, ao menos que ela não aprenda
+Estruturas Discretas''}.
+	\end{itemize}
+\end{description}
+
+A forma como definimos as sentenças condicionais é mais geral do que o
+significado associado à estas sentenças na Língua Portuguesa. Por exemplo, a
+sentença condiconal
+\begin{center}\emph{``Se estiver a chover, então iremos à praia''}\end{center}
+
+é uma sentença utilizada na linguagem normal onde existe uma relação entre a
+hipótese e a conclusão. Por outro lado, a sentença
+
+\begin{center}\emph{``Se João tem um telemóvel, então $2+3=5$''}\end{center}
+
+é verdadeira pela definição de sentença condicional, porque a sua
+conclusão/consequente é verdadeira/o. (O valor lógico da hipótese ficaria sem
+efeito). 
+
+A sentença condicional
+
+\begin{center}\emph{``Se João tem um telemóvel, então $2+3=6$''}\end{center}
+
+é verdade se João não possui um telemóvel, embora $2+3=6$ seja falso. Não
+utilizaríamos estas duas sentenças condicionais em linguagem natural (excepto
+em sarcasmo), porque não existe relação entre a hipótese e a conclusão em
+nenhuma das sentenças. O conceito matemático sobre sentenças condicionais é
+independente de uma relação de causa-efeito entre uma hipótese e uma conclusão.
+A nossa definição de sentença condicional especifica apenas valores lógicos; não
+é baseada na utilização dada na língua Portuguesa. A linguagem proposicional é
+uma linguagem artificial.
+
+\subsubsection*{Conversa, Contrapositiva e Inversa}
+
+Podemos formar novas sentenças condicionais partindo da sentença condicional $p
+\to q$. Em particular, existem três sentenças condicionais relacionadas que
+por ocorrerem frequentemente receberam nomes especiais. A proposição $q \to
+p$ é chamada de \textbf{conversa} de $p \to q$. A \textbf{contrapositiva} de $p \to q$ é a
+proposição $\lnot q \to \lnot p$. A proposição $\lnot p \to \lnot q$ é chamada
+de \textbf{inversa} de $p \to q$. Veremos que destas três sentenças condicionais
+formadas a partir de $p \to q$ apenas a contrapositiva possui sempre o mesmo
+valor que $p \to q$.
+
+Primeiro demonstraremos que a contrapositiva, $\lnot q \to \lnot p$, de uma
+sentença condicional $p \to q$ possui sempre o mesmo valor lógico que $p \to
+q$. Para verificar isto, note que a contrapositiva é falsa apenas quando $\lnot
+p$ é falso e $\lnot q$ é verdadeiro, isto é, quando $p$ é verdadeiro e $q$ é
+falso. Agora demonstraremos que nem a conversa, $q \to p$, nem a inversa,
+$\lnot p \to \lnot q$, possuem o mesmo valor lógico que $p \to q$ para todos
+valores lógicos possíveis de $p$ e $q$. Note que quando $p$ é verdadeiro e $q$ é
+falso, a sentença condicional original é falsa, mas a conversa e a inversa são
+ambas verdadeiras. Quando duas proposições compostas possuem o mesmo valor
+lógico dissemos que elas são \textbf{equivalentes}.
+
+Para ilustrar a utilização de sentenças condicionais temos o exemplo
+\ref{exem17}.
+
+
+\begin{exmp}
+\label{exem17}
+Quais são, a contrapositiva, a conversa e a inversa da sentença condicional
+\begin{center}\emph{``A equipa da casa vence sempre que chove''}\end{center}
+\end{exmp}
+
+\begin{description}
+	\item[Solução] Como ``$q$ sempre que $p$'' é uma das formas de expressar uma
+	sentença condicional $p \to q$, a sentença original pode ser reescrita como:
+	
+	\begin{center}\emph{``Se estiver a chover, então a equipa da casa
+	vence.''}\end{center}
+	
+	Consequentemente, a contrapositiva desta sentença condicional é:
+	
+	\begin{center}\emph{``Se a equipa da casa não vence, então não está a
+	chover''.}\end{center}
+	
+	A conversa é:
+	
+	\begin{center}\emph{``Se a equipa da casa vence, então está a
+	chover''}\end{center}
+	
+	A inversa é:
+	
+	\begin{center}\emph{``Se não está a chover, então a equipa da casa não
+	vence''.}\end{center}
+\end{description}
+
+\begin{defn}
+\label{def16}
+(Bicondicional) Sejam as proposições $p$ e $q$. A \emph{sentença bicondicional}
+$p \leftrightarrow q$ é a proposição ``$p$ se e somente se $q$.'' A sentença
+bicondicional $p \leftrightarrow q$ é verdadeira quando $p$ e $q$ possuem os
+mesmos valores lógicos, e é falsa no caso contrario. As sentenças
+bicondicionais são também chamadas de dupla-implicações.
+\end{defn}
+
+A tablela de verdade para $p \leftrightarrow q$ é apresentada na tabela
+\ref{tabela:17}. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}%
+\toprule
+\textbf{$p$} & \textbf{$q$} & \textbf{$p \leftrightarrow q$}\\ 
+\midrule
+V &	V & V\\
+V &	F & F\\
+F &	V & F\\
+F &	F & V\\
+\bottomrule%
+\end{tabular}%
+\caption{A tabela de verdade da sentença bicondicional $p \leftrightarrow q$.}
+\label{tabela:16}
+\end{table}
+
+Note que a expressão $p \leftrightarrow q$ é verdadeira quando ambas sentenças
+condicionais $p \to q$ e $q \to p$ são verdadeiras e falsas no caso contrário.
+Esta é a razao da utilização das palavras ``se e somente se'' para expressar
+esta conexão lógica e também da utilização da combinação dos símbolos $\rightarrow$ e $\leftarrow$. Existem algumas formas comuns de
+expressar $p \leftrightarrow q$.
+\begin{itemize}
+  \item \emph{``$p$ é necessário e suficiente para $q$''}
+  \item \emph{``Se $p$ então $q$, e vice-versa''}
+  \item \emph{``$p$ sse $q$''.}
+\end{itemize}
+
+Note que $p \leftrightarrow q$ possui o mesmo valor lógico que $(p \to q) \land
+(q \to p)$.
+
+\label{exem18}
+\begin{exmp}
+Seja $p$ a sentença \emph{``Podes viajar''} e $q$ a sentença \emph{``Compras o
+bilhete''}.
+Então $p \leftrightarrow q$ é a expressão \emph{``Podes viajar se e somente se
+compras o bilhete''}. Esta sentença é verdadeira se $p$ e $q$ são ambos
+verdadeiros ou ambos falsos, isto é, se compras um bilhete e podes viajar ou se
+não compras o bilhete e não podes viajar. É falsa quando $p$ e $q$ possuem valores lógicos
+opostos.
+\end{exmp}
+
+\subsection*{\underline{Tabelas de Verdade de Proposições Compostas}}
+
+Até agora estudamos 4 conectores lógicos importantes - conjunções, disjunções,
+sentenças condicionais, e sentenças bicondicionais - e também as negações.
+Podemos utilizar estes conectores para construír proposições compostas complexas
+que envolvem um elevado número de variáveis proposicionais. Podemos utilizar
+tabelas de verdade para determinar os valores lógicos destas proposições
+compostas, como o exemplo abaixo ilustra. Utilizamos uma coluna separada para
+encontrar o valor lógico de cada expressão composta que ocorre na proposição
+composta. Os valores lógicos da proposição composta para cada combinação de
+valores lógicos das variáveis proposicioanis nesta expressão é encontrado na
+última coluna da tabela.
+
+\label{exem19}
+\begin{exmp}
+Construa a tabela de verdade para a proposição composta \begin{center}$(p \lor
+\lnot q) \to (p \land q).$\end{center}
+\end{exmp}
+
+\begin{description}
+\item[Solução] Como esta tabela involve duas variáveis proposicionais $p$ e $q$,
+teremos quatro linhas nesta tabela de verdade, uma para cada par de valores
+lógicos VV, VF, FV, FF. As primeiras duas colunas são utilizadas para para os
+valores lógicos de $p$ e $q$, respectivamente. Na terceira coluna encontramos o
+valor lógico $\lnot q$, necessários para encontrar o valor lógico de $p \lor
+\lnot q$, encontrados na quarta coluna. A quinta coluna fornece os valores
+lógicos de $p \land q$. Finalmente, o valor lógico de $(p \lor \lnot q) \to (p
+\land q)$ é encontrado na última coluna. A tabela de verdade resultante é:\\
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}%
+	\toprule
+	\textbf{$p$} & \textbf{$q$}	& \textbf{$\lnot q$} & \textbf{$p \lor \lnot q$} &
+	\textbf{$p \land q$} & \textbf{$(p \lor \lnot q) \to (p \land q)$}\\
+	\midrule
+	V &	V & F & V & V & V\\
+	V &	F & V & V & F & F\\
+	F &	V & F & F & F & V\\
+	F &	F & V & V & F & F\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Tabela de verdade $(p \lor q) \to
+(p \land q)$.}
+	\label{tabela:17}
+\end{table}
+\end{description}
+
+%precedencIAS
+\subsection*{\underline{Precedência dos operadores lógicos}}
+
+Podemos construír proposições compostas utilizando o operador de negação e os
+operadores lógicos definidos até agora. No geral, utilizaremos os parêntesis
+para especificar a ordem na qual os operadores lógicos numa proposição composta
+serão aplicados. Por exemplo, $(p \lor q) \land (\lnot r)$ é a conjunção de $p
+\lor q$ e $\lnot r$. No entanto, para reduzir o número de parêntesis,
+especificamos que o operador de negação é aplicado antes dos outros operadores
+lógicos. Isto significa que $\lnot p \land q$ é a conjunção de $\lnot p$ e $q$,
+nomeadamente, $(\lnot p) \land \lnot q$, e não a negação da conjunção de $p$ e
+$q$, nomeadamente, $\lnot (p \land q)$.
+
+Outra regra geral das precedências é que o operador de conjunção possui
+precedência sobre o operador de disjunção, tal que $p \land q \lor r$ significa
+$(p \land q) \lor r$ em vez de $p \land (q \lor r)$. Como esta regra é difícil
+de lembrar, iremos utilizar parêntesis para que a ordem dos operadores
+de disjunção e conjunção seja clara.
+
+Finalmente, é uma regra aceite que os operadores de condicional e
+bicondicional, $\to$ e $\leftrightarrow$, possuem baixa precedência com relação
+os operadores de conjunção e disjunção. Consequentemente, $p \lor q \to r$ é o
+mesmo que $(p \lor q) \to r$. Iremos utilizar parentêsis quando a ordem do
+operador condicional e bicondicional estiver em questão, embora o operador
+condicional tenha maior prioridade que o operador bicondicional. A tabela
+\ref{tabela:18} apresenta os níveis de precedência dos operadores lógicos,
+$\lnot, \land, \lor$ e $\leftrightarrow$.
+
+	
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}%
+	\toprule
+	\textbf{Operador} & \textbf{Precedência}\\
+	\midrule
+	$\lnot$ & $1$ \\
+	$\land$ & $2$ \\
+	$\lor$ & $3$ \\
+	$\to$ & $4$ \\
+	$\leftrightarrow$ & $5$ \\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Precedência dos operadores lógicos.}
+	\label{tabela:18}
+\end{table}
+
+
+\section{Equivalências proposicionais}
+\label{sec:eqproposicioanis}
+
+Um passo muito importante utilizado num argumento matemático é a substituição de
+uma sentença por outra com o mesmo valor lógico. Por causa disso, métodos que
+produzem proposições com o mesmo valor lógico que uma dada proposição composta
+são extensivamente utilizados na construção de argumentos matemáticos. Note que
+iremos utilizar o termo ``proposição composta'' para nos referir à uma expressão
+formada a partir de variáveis proposicionais utilizando operadores lógicos, como
+$p \land q$.
+
+Começamos por classificar as proposições compostas de acordo aos seus valores
+lógicos possíveis.
+
+\label{def17}
+\begin{defn} (Tautologia, Contradição e Contingência) Uma proposição composta
+que é sempre verdadeira, não importando valor lógicos das variáveis
+proposicionais que a compoêm, é chamada de \emph{tautologia}. Uma proposição
+composta que é sempre falsa é chamada de \emph{contradição}. A proposição
+composta que não é nem uma tautologia nem uma contradição é chamada de
+\emph{contingência}.
+\end{defn}
+
+Tautologias e contradições são geralmente importantes no raciocínio matemático.
+O exemplo \ref{exem120} ilustra estes dois tipos de proposições compostas.
+
+
+\begin{exmp}
+\label{exem120}
+Podemos construir exemplos de tautologias e contradições utilizando apenas uma
+variável proposicional. Considere as tabelas de verdade de $p \lor \lnot p$ e
+$p \land \lnot p$, apresentadas na tabela \ref{tabela:19}. Como $p \lor \lnot p$ é
+sempre verdadeiro, é uma tautologia. Como $p \land \lnot p$ é sempre falso, é uma contradição.
+\end{exmp}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}%
+	\toprule
+	\textbf{$p$} & \textbf{$\lnot p$} & \textbf{$p \lor \lnot p$} & \textbf{$p
+	\land \lnot p$}\\
+	\midrule
+	V & F & V & F\\
+	F & V & V & F\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Exemplo de uma Tautologia e de uma Contradição.}
+	\label{tabela:19}
+\end{table}
+
+\subsection*{\underline{Equivalências Lógicas}}
+
+Proposições compostas que possuem o mesmo valor lógico em todos os casos
+possíves são chamadas de \textbf{lógicamente equivalentes}. Também podemos
+definir este conceito da seguinte forma.
+
+\label{def18}
+\begin{defn}
+As proposições compostas $p$ e $q$ são chamadas de \emph{lógicamente
+equivalentes} se $p \leftrightarrow q$ é uma tautologia. A notação $p \equiv q$
+denota que $p$ e $q$ são lógicamente equivalentes.
+\end{defn}
+
+\begin{description}
+\item[Nota:] O símbolo $\equiv$ não é um conector lógico, e $p \equiv q$ não é
+uma proposição composta, mas sim a sentença que diz que $p \leftrightarrow q$ é
+uma tautologia. O símbolo $\iff$ é algumas vezes uilizado em detrimento de
+$\equiv$ para denotar equivalências lógicas.
+\end{description}
+
+Uma forma de determinar se duas proposições compostas são equivalentes é uma
+utilizar uma tabela de verdade. Em particular, as proposições compostas $p$ e
+$q$ são equivalentes se e sómente se os valores lógicos nas suas colunas são
+iguais. O exemplo \ref{exem121} ilustra este método por estabelecer uma
+equivalência lógica extremamente importante e útil, nomeadamente, de $\lnot
+(p\lor q)$ com $\lnot p \land \lnot q$. Esta equivalência lógica é uma das
+\textbf{leis de De Morgan}, apresentadas na tabela \ref{tabela:121}, em homenagem
+ao matemático Augustus De Morgan, do século 19.
+
+
+\begin{exmp}
+\label{exem121}
+Mostre que $\lnot (p \land q)$ e $\lnot p \land \lnot q$ são lógicamente
+equivalentes.
+\end{exmp}
+
+\begin{description}
+\item[Solução] A tabela de verdade para estas proposições compostas é
+apresentada na tabela \ref{tabela:120}. Como os valores lógicos das proposições
+compostas $\lnot (p \land q)$ e $\lnot p \land \lnot q$ são iguais para todas as
+combinações possíveis de $p$ e $q$, concluímos que $\lnot (p and q)
+\leftrightarrow \lnot p \land \lnot q$ é uma tautologia e que estas proposições
+compostas são lógicamente equivalentes.
+\end{description}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}%
+	\toprule
+	\textbf{$p$} & \textbf{$q$} & \textbf{$p \lor q$} & \textbf{$\lnot (p
+	\lor q)$} & \textbf{$\lnot p$}	& \textbf{$\lnot q$}	&	\textbf{$\lnot p
+	\land \lnot q$}\\
+	\midrule
+	V & V & V & F & F & F & F\\
+	V & F & V & F & F & V & F\\
+	F & V & V & F & V & F & F\\
+	F & F & F & V & V & V & V\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Tabela de verdade de $\lnot (p \land q)$ e $\lnot p \land \lnot q$.}
+	\label{tabela:120}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|}%
+	\toprule
+	$\lnot (p \land q) \equiv \lnot p \lor \lnot q$\\
+	$\lnot (p \lor q) \equiv \lnot p \land \lnot q$\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Leis de De Morgan.}
+	\label{tabela:121}
+\end{table}
+
+
+
+\begin{exmp}
+\label{exem122}
+Mostre que $p \to q$ e $\lnot p \lor q$ são lógicamente equivalentes.
+\end{exmp}
+
+\begin{description}
+\item[Solução] Construímos a tabela de verdade para estas proposições
+compostas na tabela \ref{tabela:122}. Como os valores lógicos de $\lnot p \lor
+q$ e $p \to q$ são iguais, elas são lógicamente equivalentes.
+\end{description}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}%
+	\toprule
+	\textbf{$p$} & \textbf{$q$} & \textbf{$\lnot p$} & \textbf{$\lnot p
+	\lor q$} & \textbf{$p \to q$}\\
+	\midrule
+	V & V & F & V & V\\
+	V & F & F & F & F\\
+	F & V & V & V & V\\
+	F & F & V & V & V\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Tabelas de verdade de $\lnot p \lor q$ e $p \to q$.}
+	\label{tabela:122}
+\end{table}
+
+\label{exem123}
+\begin{exmp}
+Mostre que $p \lor (q \land r)$ e $(p \lor q) \land (p \lor r)$ são lógicamente
+equivalentes. Esta é a \emph{lei distributiva} da disjunção sobre a conjunção.
+\end{exmp}
+
+\begin{description}
+\item[Solução:] Construímos a tabela de verdade destas proposições compostas na
+tabela \ref{tabela:123}. Como os valores lógicos de $p \lor (q \land r)$ e $(p
+\lor q) \land (p \lor r)$ iguais, estas duas proposições compostas são
+lógicamente equivalentes.
+\end{description}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}%
+	\toprule
+	\textbf{$p$} & \textbf{$q$} & \textbf{$r$} & \textbf{$q \land r$} &
+	\textbf{$p \lor (q \land r)$} & \textbf{$p \lor q$} & \textbf{$p \lor r$} &
+	\textbf{$(p \lor q) \land (p \lor r)$}\\
+	\midrule
+	V & V & V & V & V & V & V & V\\
+	V & V & F & F & V & V & V & V\\
+	V & F & V & F & V & V & V & V\\
+	V & F & F & F & V & V & V & V\\
+	F & V & V & V & V & V & V & V\\
+	F & V & F & F & F & V & F & F\\
+	F & F & V & F & F & F & V & F\\
+	F & F & F & F & F & F & F & F\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Tabelas de verdade de $p \lor (q \land r)$ e $(p \lor q) \land (p \lor
+	r)$.}
+	\label{tabela:123}
+\end{table}
+%\section{Lógica de predicados}
+%\label{sec:logicadepredicados}
+A tabela \ref{tabela:124} contém algumas equivalências importantes. Nestas
+equivalências, \textbf{V} denota a proposição composta que é sempre verdadeira e
+\textbf{F} denota a proposição composta que é sempre falsa.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|}%
+	\toprule
+	\textbf{Equivalência} & \textbf{Nome}\\
+	\midrule
+	$p \land \textbf{V} \equiv p$ &	Leis da Identidade\\
+	$p \lor \textbf{F} \equiv p$ &	\\
+	\midrule
+	$p \lor \textbf{V} \equiv \textbf{V}$ &	Leis da Dominância\\
+	$p \land \textbf{F} \equiv \textbf{F}$ &\\
+	\midrule
+	$p \lor p \equiv p$ &	Leis da Idempotência\\
+	$p \land p \equiv p$ &	\\
+	\midrule
+	$\lnot (\lnot p) \equiv p$ & Lei da Dupla Negação\\
+	\midrule
+	$p \lor q \equiv q \lor p$ & Leis Comutativas\\
+	$p \land q \equiv q \land p$ &\\
+	\midrule
+	$(p \lor q) \lor r \equiv p \lor (q \lor r)$ & Leis Associativas\\
+	$(p \land q) \land r \equiv p \land (q \land r)$ &\\
+	\midrule
+	$p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ & Leis Distributivas \\
+	$p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ & \\
+	\midrule
+	$\lnot (p \land q) \equiv \lnot p \lor \lnot q$ & Leis de De Morgan\\
+	$\lnot (p \lor q) \equiv \lnot p \land \lnot q$ &\\
+	\midrule
+	$p \lor (p \land q) \equiv p$ & Leis da Absorção\\
+	$p \land (p \lor q) \equiv p$ &\\
+	\midrule
+	$p \lor \lnot p \equiv \textbf{V}$ & Leis da Negação\\
+	$p \land \lnot p \equiv \textbf{F}$ &	\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Equivalências Lógicas.}
+	\label{tabela:124}
+\end{table}
+
+Apresentamos também algumas equivalências úteis que são compostas por
+proposições compostas que utilizam sentenças condicionais e bicondicionai nas
+tabelas \ref{tabela:125} e \ref{tabela:126}, respectivamente. A verificação das
+mesmas fica como exercício para o estudante.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|}%
+	\toprule
+	$p \to q \equiv \lnot p \lor q$\\
+	$p \to q \equiv \lnot q \to \lnot p$\\
+	$p \lor q \equiv \lnot p \to q$\\
+	$p \land q \equiv \lnot (p \to \lnot q)$\\
+	$\lnot (p \to q) \equiv p \land \lnot q$\\
+	$(p \to q) \land (p \to r) \equiv p \to (q \land r)$\\
+	$(p \to r) \land (q \to r) \equiv (p \lor q) \to r$\\
+	$(p \to q) \lor (p \to r) \equiv p \to (q \lor r)$\\
+	$(p \to r) \lor (q \to r) \equiv (p \land q) \to r$\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Equivalências Lógicas envolvendo sentenças condicionais.}
+	\label{tabela:125}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|}%
+	\toprule
+	$p \leftrightarrow q \equiv (p \to q) \land (q \to p)$\\
+	$p \leftrightarrow q \equiv \lnot p \leftrightarrow \lnot q$\\
+	$p \leftrightarrow q \equiv (p \land q) \lor (\lnot p \land \lnot q)$\\
+	$\lnot (p \leftrightarrow q) \equiv p \leftrightarrow \lnot q$\\
+	\bottomrule%
+	\end{tabular}%
+	\caption{Equivalências Lógicas envolvendo sentenças bicondicionais.}
+	\label{tabela:126}
+\end{table}
+%Comments can be added to the margins of the document using the \todo{Here's a comment in the margin!} todo command, as shown in the example on the right. You can also add inline comments:
+
+%\todo[inline, color=green!40]{This is an inline comment.}
+\subsection*{\underline{Utilizando as leis de De Morgan}}
+
+As duas equivalências lógicas conhecidas como as leis de De Morgan são
+particularmente importantes. Elas nos dizem como negar conjunções e disjunções.
+Em particular, a equivalência $\lnot (p \lor q) \equiv \lnot p \land \lnot q$
+nos diz que a negação de uma disjunção é formada pela conjunção das negações das
+proposições que a compoêm. Similarmente, a equivalência $\lnot (p \land q)
+\equiv \lnot p \lor \lnot q$ nos diz que a negação da conjunção é formada pela
+disjunção das negações das proposições que a compoêm. O exemplo \ref{exem124}
+ilustra a utilização das leis de De Morgan.
+
+
+\begin{exmp}
+\label{exem124}
+Utilize as leis de De Morgan para expressar as negações de ``O Miguel possui um
+telemóvel e um laptop'' e ``A Manuela irá ao concerto ou Sérgio irá ao
+concerto''.
+\end{exmp}
+
+\begin{description}
+\item[Solução: ]Seja $p$ a sentença ``O Miguel possui um telemóvel'' e $q$ a
+sentença ``Miguel possui um laptop''. Então a sentença ``O Miguel possui um
+telemóvel e um laptop'' pode ser representada por $p \land q$. Pela primeira lei
+de De Morgan, $\lnot (p \land q)$ é equivalente a $\lnot p \lor \lnot q$.
+Consequentemente, podemos expressar a negação da sentença original como ``o
+Miguel não possui um telemóvel ou não possui um laptop''.
+\item[]Seja $r$ ``A Manuela irá ao concerto'' e $s$ ``Sérgio irá ao  concerto''.
+Então ``A Manuela irá ao concerto ou Sérgio irá ao concerto'' pode ser
+representada por $r \lor s$. Pela segunda lei de De Morgan, $\lnot (r \lor s)$ é
+equivalente a $\lnot r \land \lnot s$. Consequentemente, podemos expressar a
+negação da nossa sentença original como ``A Manuela não irá ao concerto e o
+Sérgio não irá ao concerto''.
+\end{description}
+
+
+\subsection*{\underline{Construíndo Novas Equivalências Lógicas}}
+
+As equivalências lógicas apresentadas na tabela \ref{tabela:124} e outras que
+foram estabelecidas (como as das tabelas \ref{tabela:125} e \ref{tabela:126}),
+podem ser utilizadas para construír novas equivalências lógicas. A justificação
+disto é que uma proposição numa proposição composta pode ser substituída por
+outra proposição composta que seja lógicamente equivalente sem alterar os
+valores lógicos na proposição composta original. Esta técnica é ilustrada nos
+exemplos \ref{exem125} à \ref{exem126}, onde também utilizamos o facto de que se
+$p$ e $q$ são logicamente equivalentes e $q$ e $r$ são lógicamente equivalentes,
+então, $p$ e $r$ são logicamente equivalentes.
+
+\begin{exmp}
+\label{exem125}
+Mostre que $\lnot (p \to q)$ e $p \land \lnot q$ são lógicamente equivalentes.
+\end{exmp}
+
+\begin{description}
+\item[Solução:] Poderíamos fácilmente utilizar uma tabela de verdade para provar
+que estas duas sentenças são lógicamente equivalentes (tal como fizemos
+anteriormente). No entanto, queremos ilustrar como utilizar as identidades
+lógicas que conhecemos para estabelecer novas identidades lógicas, que é algo de
+importância prática no estabelecimento de equivalências lógicas de proposições
+compostas com um número elevado de variáveis. Sendo assim, iremos estabelecer
+esta equivalência por desenvolver uma série de equivalências lógicas utilizando
+as equivalências da tabela \ref{tabela:124} de cada vez, começando por $\lnot
+(p \to q)$ e terminando em $p \land \lnot q$. Temos as seguintes equivalências.
+
+ \begin{table}[H]
+	\centering
+	\begin{tabular}{rcll}%
+	$\lnot (p \to q)$ & $\equiv$ & $\lnot (\lnot p \lor q)$ & \emph{pelo exemplo
+	\ref{exem122}}\\
+	 & $\equiv$ & $\lnot (\lnot p) \land \lnot q$ & \emph{pela segunda lei
+	 de De Morgan}\\	
+	& $\equiv$ & $p \land \lnot q$ & \emph{pela lei da dupla negação}\\	
+	\end{tabular}%
+\end{table}
+\end{description}
+
+
+\begin{exmp}
+\label{exem126}
+Mostre que $\lnot (p \lor (\lnot p \land q))$ e $\lnot p \land \lnot q$ são
+lógicamente equivalentes por desenvolver uma série de equivalências lógicas.
+\end{exmp}
+
+\begin{description}
+\item[Solução:] Iremos utilizar uma das equivalências na tabela \ref{tabela:124}
+uma de cada vez, começando por $\lnot (p \lor (\lnot p \land q))$ e terminando
+com $\lnot p \land \lnot q$. Teremos as seguintes equivalências.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{rcll}%
+	$\lnot (p \lor (\lnot p \land q))$ & $\equiv$ & $\lnot p \land \lnot (\lnot p
+	\land q)$ & \emph{pela segunda lei de De Morgan}\\
+	 & $\equiv$ & $\lnot p \land [\lnot(\lnot p) \lor \lnot q]$ & \emph{pela
+	 primeira lei de De Morgan}\\	
+	& $\equiv$ & $\lnot p \land (p \lor \lnot q)$ & \emph{pela lei da dupla
+	negação}\\
+	& $\equiv$ & $(\lnot p \land p) \lor (\lnot p \land \lnot q)$ & \emph{pela
+	segunda lei distributiva}\\
+	& $\equiv$ & $\textbf{F} \lor (\lnot p \land \lnot q)$ & \emph{porque $\lnot
+	p \land p \equiv \textbf{F}$}\\
+	& $\equiv$ & $(\lnot p \land \lnot q) \lor \textbf{F}$ & \emph{pela lei
+	comutativa da disjunção}\\
+	& $\equiv$ & $\lnot p \land \lnot q$ & \emph{pela lei da identidade para
+	\textbf{F}}
+	
+	\end{tabular}%
+\end{table}
+\end{description}
+
+\subsection*{\underline{Satisfabilidade Proposicional}}
+
+Um proposição composta é \textbf{satisfazível} se existe uma atribuição de
+valores lógicos às suas variáveis que a torna verdadeira. Quando tais
+atribuições não existem. isto é, quando a proposição composta é falsa para todas
+as atribuições de valores lógicos às variáveis, a proposição composta é
+\textbf{insatisfazível}. Note que uma proposição composta é insatisfazível se e
+somente se a sua negação é verdadeira para todas as atribuições de valores
+lógicos às suas variáveis, isto é, se e somente se a sua negação é uma
+tautologia.
+
+Quando encontramos uma atribuição de valores lógicos que torna a proposição
+composta verdadeira, demostramos que ela é satisfazível; essa tal atribuição é
+chamada de \textbf{solução} deste particula problema de satisfabilidade. No
+entanto, para mostrar que uma proposição composta é insatisfazível, devemos
+mostrar que \emph{toda} a atribuição de valores lógicos às suas variáveis a
+torna falsa. Embora possamos utilizar sempre uma tabela de verdade para
+determinar se uma proposição composta é satisfazíl, geralmente é mais eficiente
+não utilizar uma, tal como indica o exemplo \ref{exem28}.
+
+\begin{exmp}
+\label{exem28}
+Determine se cada uma das proposições compostas $(p \lor \lnot q) \land (q \lor
+\lnot r) \land (r \lor \lnot p)$, $(p \lor q \lor r) \land (\lnot p \lor \lnot q
+\lor \lnot r)$ e $(p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p)
+\land (p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)$ é
+satisfazível.
+\end{exmp}
+
+\begin{description}
+\item[Solução: ]Ao invés de utilizar uma tabela de verdade para resolver este
+problema, iremos raciocinar sobre os valores lógicos. Note que $(p \lor \lnot q) \land (q \lor
+\lnot r) \land (r \lor \lnot p)$ é verdadeiro quando as três variáveis $p, q$ e
+$r$ possuem os mesmos valores lógicos. Assim, a proposição composta é
+satisfazível pois existe pelo menos uma atribuição de valores lógicos para $p,
+q$ e $r$ que a torna verdadeira. Similarmente, note que $(p \lor q \lor r)
+\land (\lnot p \lor \lnot q \lor \lnot r)$ é verdadeira quando pelo menos um
+entre $p, q$ e $r$ é verdadeiro e pelo menos um é falso. Assim, $(p \lor q \lor
+r) \land (\lnot p \lor \lnot q \lor \lnot r)$ é satisfazível pois existe pelo
+menos uma atribuição de valores lógicos para $p, q$ e $r$ que a torna
+verdadeira.
+
+Finalmente note que para $(p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p)
+\land (p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)$ ser
+verdadeira, $(p \lor \lnot q) \land (q \lor \lnot r) \land (r \lor \lnot p)$ e
+$(p \lor q \lor r) \land (\lnot p \lor \lnot q \lor \lnot r)$ devem ambas ser
+verdadeiras. Para a primeira ser verdadeira, as três variáveis devem possuir o
+mesmo valor lógico, e para a segunda ser verdadeira, pelo menos uma entre três
+varáveis deve ser verdadeira e pelo menos uma deve ser falsa. No entanto, estas
+condições são contraditórias. Destas observações podemos concluír que nenhuma
+atribuição de valores lógicos a $p, q$ e $r$ torna $(p \lor \lnot q) \land (q
+\lor \lnot r) \land (r \lor \lnot p) \land (p \lor q \lor r) \land (\lnot p
+\lor \lnot q \lor \lnot r)$ verdadeiro. Logo é insatisfazível.
+
+\end{description}
+
+\section{Predicados e Quantificadores}
+
+\subsection*{\underline{Introdução}}
+\subsection*{\underline{Predicados}}
+\subsection*{\underline{Quantificadores}}
+\subsection*{\underline{Quantificadores com Domínios Restrictos}}
+\subsection*{\underline{Precedência de Quantificadores}}
+\subsection*{\underline{Variáveis Ligadas}}
+\subsection*{\underline{Equivalência Lógicas Involvendo Quantificadores}}
+\subsection*{\underline{Negação de Expressões Quantificadas}}
+\subsection*{\underline{Tradução de Expressões Lógicas}}
+
+\section{Quantificadores Aninhados}
+
+\subsection*{\underline{Sentenças Involvendo Quantificadores Aninhados}}
+\subsection*{\underline{A Ordem dos Quantificadores}}
+\subsection*{\underline{Sentenças Matemáticas e Sentenças Involvendo Quantificadores
+Aninhados}}
+\subsection*{\underline{Tradução de Quantificadores Aninhados para Português}}
+\subsection*{\underline{Negação de Quantificadores Aninhados}}
+
+\section{Regras de Inferência}
+\section{Demonstrações}
+\section{Métodos e Estratégias de Demonstração}

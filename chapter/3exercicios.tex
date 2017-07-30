@@ -1,0 +1,131 @@
+\chapter*{Exercícios do Capítulo \ref{cap:conjuntos}}
+%%1
+
+\section*{Conjuntos}
+
+\begin{enumerate}
+  	\item Seja $A$ o conjunto dos estudantes que vivem à $5 km$ do campus e $B$ o conjunto dos estudantes que vêm 
+  	de bicicleta às aulas. Descreva os estudantes em cada um dos seguintes conjuntos.
+  	\begin{enumerate}
+  	  	\item $A \cap B$ \item $A \cup B$ \item $A - B$ \item $B - A$
+  	\end{enumerate}
+  	
+  	\item Liste os elementos dos seguintes conjuntos:
+  	\begin{enumerate}
+  		 \item $\{x | x \in \mathbb{N} \land x^2 < 25\}$ \item $\{x | x$ é um dos antigos vencedores da Fórmula 1 $\}$
+  		 \item $\{x | x \in \mathbb{R} \land x^2 = -1\}$ \item $\{x | x \in \mathbb{N} \land x^2 - 5x + 6 = 0\}$
+	\end{enumerate}
+	
+	\item Qual é cardinalidade de cada um dos seguintes conjuntos?
+	\begin{enumerate}
+	  	\item $ S = \{a, \{a, \{a\}\}\}$ \item $\{\{a\}, \{\{a\}\}\}$ \item $\{a, \{\emptyset \}, \emptyset\}$
+	  	\item $\{\emptyset, \{\emptyset, \{\emptyset\}\},\{\emptyset, \{\emptyset, \{\emptyset\}\}\}\}$
+	\end{enumerate}
+	
+  	\item Suponha que $A$ é o conjunto dos estudantes do segundo ano e $B$ é o conjunto dos estudantes de Lógica de Programação.
+  	Descreva cada um dos conjuntos em termos de $A$ e $B$.
+  	\begin{enumerate}
+  		\item O conjunto dos estudantes do segundo ano com a cadeira de Lógica de Programação
+  		\item O conjunto dos estudantes do segundo ano que não têm a cadeira de Lógica de Programação
+  		\item O conjunto dos estudantes que são, ou do segundo ano ou têm a cadeira de Lógica de Programação
+  		\item O conjunto dos estudantes que não são do segundo ano, nem têm a cadeira de Lógica de Programação
+	\end{enumerate}
+
+	\item Sejam, $A = \{a, b, c, d, e\}$ e $B = \{a, b, c, d, e, f, g, h\}$ encontre:
+	\begin{enumerate}
+	  \item $A \cup B$ \item $A \cap B$ \item $A - B$ \item $B - A$ 
+	\end{enumerate}
+	
+	\item Desenhe os diagramas de Venn para cada uma das seguintes combinações dos domínios A, B e C
+	\begin{enumerate}
+		\item $A \cap (B \cup C)$ \item $A \cap B \cap C$ \item $(A - B) \cup (A - C) \cup (B - C)$ 
+		\item $A \cap (B - C)$ \item $(A \cap B) \cup (A \cap C)$ \item $(A \cap B) \cup (A \cap C)$
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Exercícios com Programação}
+
+Escreva programas de computador com as entradas e saídas especificadas.
+\begin{enumerate}
+  \item Dados dois conjuntos finitos, liste todos os elementos do produto
+  Cartesiano dos dois conjuntos.
+  \item Dado um conjunto finito, liste todos os elementos do seu
+  conjunto-potência.
+  \item Dados dois conjuntos $A$ e $B$ subconjuntos do mesmo conjunto universal,
+  encontre os conjuntos $A \cup B$, $A \cap B$ e $A - B$.
+\end{enumerate}
+
+\chapter*{Exercícios}
+%%1
+\section*{Funções}
+
+\begin{enumerate}
+	\item Determine se $f$ é uma função de $\mathbb{Z}$ em $\mathbb{R}$ se
+	\begin{enumerate}
+		\item $f(n) = \pm n$ \item $\sqrt{n^2 + 1}$ \item $\frac{1}{(n^2 - 4)}$  
+	\end{enumerate}
+	
+	\item Determine se as seguintes funções de $\mathbb{Z}$ para $\mathbb{Z}$ são injectivas ou sobrejectivas.
+	\begin{enumerate}
+	  	\item $f(n) = n - 1$ \item $f(n) = n^2 + 1$ \item $f(n) = n^3$ \item $f(n) = \frac{n}{2}$
+	\end{enumerate}
+	
+	\item Considere as seguintes funções do conjunto dos estudantes de Estruturas Discretas. Em que condições uma função é injectiva
+	se ela atribui a um estudante o seu:
+	\begin{enumerate}
+	  	\item Número de telemóvel
+	   	\item Número de estudante
+	   	\item Nota final
+	   	\item Local de Nascimento
+	\end{enumerate}
+
+	\begin{description}
+		\item[Definição 1] Uma função diz-se \emph{bijectiva} quando é ao mesmo tempo injectiva (um para um) e sobrejectiva.
+		\item[Exemplo 1] Seja $f$ uma função da forma $\{a,b,c,d\}$ para $\{1,2,3,4\}$ com $f(a) = 4, f(b) = 2, f(c) = 1$ e $f(d) = 3$.
+		A função $f$ é uma função injectiva e sobrejectiva. É injectiva porque não existem valores no domínio que são mapeados
+		para o mesmo valor no co-domínio. É sobrejectiva porque todos os quatro elementos do co-domínio são imagens dos elementos
+		no domínio. Então $f$ é uma função \emph{bijectiva} ou uma \emph{bijeção}.	
+	\end{description}
+	
+	\item Determina se cada uma das seguintes funções é uma bijeção de $\mathbb{R}$ para $\mathbb{R}$.
+	\begin{enumerate}
+		\item $f(x) = -3x + 4$ \item $f(x) = -3x^2 + 7$ \item $f(x) = (x+1)/(x+2)$ \item $f(x) = x^5 + 1$ \item $f(x) = 2x + 1$
+		\item $f(x) = x^2 + 1$
+	\end{enumerate}
+	
+	\begin{description}
+		\item[Definição 2] Seja $f$ a função de $A$ para $B$ e seja $S$ um subconjunto de $A$. A imagem de $S$ sobre a função $f$ é o
+		subconjunto de $B$ que consiste nas imagens dos elementos de $S$. Denotamos a imagem de $S$ por $f(S)$, tal que
+		$f(S) = \{t | \exists s \in S(t = f(s))\}$. Também podemos utilizar a representação $\{f(s) | s \in S\}$
+		\item[Exemplo 2] Seja $A = \{a,b,c,d,e\}$ e $B = \{1,2,3,4\}$ com $f(a)=2, f(b)=1, f(c)=4, f(d)=1$, e $f(e)=1$. A imagem
+		do subconjunto $S = \{b,c,d\}$ é o conjunto $f(S) = \{1, 4\}$.
+	\end{description}
+
+	\item Seja $S = \{-1,0,2,4,7\}$ encontre $f(S)$ se
+	\begin{enumerate}
+	  	\item $f(x)=1$ \item $f(x)=2x + 1$ \item $f(x)=\lceil \frac{x}{5} \rceil$ \item $f(x) = \lfloor \frac{(x^2 + 1)}{3} \rfloor$  
+	\end{enumerate}
+
+	\item Seja $f(x) = \lfloor \frac{x^2}{3} \rfloor$, encontre $f(S)$ se,
+	\begin{enumerate}
+		\item $S = \{-2,-1,0,1,2,3\}$ \item $S=\{0,1,2,3,4,5\}$ \item $S=\{1,5,7,11\}$ \item $S=\{2,6,10,14\}$ 
+	\end{enumerate}
+	
+	\item Seja $f: \mathbb{N} \to \mathbb{N}$ definida por $f(x) = x + 1$. Seja $g: \mathbb{N} \to \mathbb{N}$ definida por $g(x) = 3x$.
+	Calcule o seguinte:
+	\begin{enumerate}
+	  	\item $(g \circ f)(5)$ \item $(f \circ g)(5)$ \item $(g \circ f)(x)$ \item $(f \circ g)(x)$ \item $(f \circ f)(x)$
+	  	\item $(g \circ g)(x)$
+	\end{enumerate}
+	
+	\item Para cada uma das seguintes bijeções $f: \mathbb{R} \to \mathbb{R}$, encontre $f^{-1}$
+	\begin{enumerate}
+	  	\item $f(x)=7x$ \item $f(x) = x^3$ \item $f(x) = \frac{(x + 4)}{3}$
+	\end{enumerate}
+\end{enumerate}
+
+%\section*{Exercícios com programação}
+
+
+\vspace*{2em}

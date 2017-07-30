@@ -1,0 +1,91 @@
+\documentclass[a4paper]{report}
+
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{inputenc}
+\usepackage{amsmath}
+%\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[plainpages=false,unicode]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{calc, trees, positioning, arrows, fit, shapes}
+
+
+%FROM SEPA
+%\usepackage{latexsym}
+\usepackage{amsthm, amssymb, amsfonts, amsbsy}
+\theoremstyle{definition}
+%\usepackage[fleqn]{mathtools}
+%\usepackage{float}
+\usepackage{epsfig,float,graphicx}
+
+\numberwithin{table}{section}
+
+\usepackage{centernot}
+%\usepackage{chngcntr}
+%\setlength{\mathindent}{0pt}
+%\usepackage{verbatim}
+%\usepackage{pdfpages} 
+%\usepackage{pifont}
+%\restylefloat{table}
+%%
+%\title{Matem�tica Discreta - Programa da disciplina}
+%\author{Dizando Norton, MSc}
+%\date{\today}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+\hbox{ % Horizontal box
+\hspace*{0.1\textwidth} % Whitespace to the left of the title page
+\rule{1pt}{\textheight} % Vertical line
+\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+
+{\noindent\Huge\bfseries Estruturas Discretas}\\[1\baselineskip] % Title
+{\large {\textbf{Programa da disciplina}}}\\[4\baselineskip] % Tagline or
+% further description
+{\Large \textsc{Dizando Norton}\\[1\baselineskip} % Author name
+{\large (dizando.norton@gmail.com)}
+
+\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+{\small \noindent {DEI - Ci�ncia da Computa��o}}\\[\baselineskip] % Publisher
+% and logo
+{\small \textsc{Faculdade de Ci�ncias - Universidade Agostinho Neto}}
+}}
+\endgroup}
+
+\newcounter{dcounter}[chapter]
+\newcommand{\dlabel}[1]{
+	\refstepcounter{dcounter}\label{#1}
+}
+
+\newcounter{ecounter}[chapter]
+\newcommand{\elabel}[1]{
+	\refstepcounter{ecounter}\label{#1}
+}
+
+\begin{document}
+%\maketitle
+%\pagestyle{empty} % Removes page numbers
+\titleGM % This command includes the title page
+\tableofcontents
+
+\input{description.tex}
+\input{chapter/1.tex}%logica formal
+\input{chapter/1exercicios.tex}
+\input{chapter/2.tex}%demonstra��es, recorr�ncia e an�lise de algoritmos
+\input{chapter/2exercicios.tex}
+\input{chapter/3.tex}%conjuntos, fun��es, matrizes e sequencias
+\input{chapter/3exercicios.tex}
+\input{chapter/4.tex}%relacoes
+\input{chapter/4exercicios.tex}
+\input{chapter/5.tex}%grafos
+\input{chapter/5exercicios.tex}
+\input{chapter/6.tex}%arvores
+\input{chapter/6exercicios.tex}
+%\input{aulas/cf.tex}
+
+\end{document}
